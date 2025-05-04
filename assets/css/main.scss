@@ -7,3 +7,44 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Custom overrides to tighten up About page form
+// ─────────────────────────────────────────────────────────────────────────────
+
+.form-container {
+    max-width: 500px !important;     // shrink overall width
+    margin: 2rem auto !important;
+    padding: 1rem !important;         // add a little inner padding
+    background-color: #f7f7f7;        // keep the light grey if you like
+    border-radius: 4px;
+  }
+  
+  .form-container input,
+  .form-container textarea {
+    font-size: 0.9rem !important;     // smaller text
+    padding: 0.75rem !important;      // less padding
+    margin-bottom: 0.75rem !important;
+    box-sizing: border-box;
+  }
+  
+  .form-container button[type="submit"] {
+    padding: 0.5rem 1.5rem !important; // more compact button
+    font-size: 0.9rem !important;
+  }
+  
+  @media (max-width: 600px) {
+    .form-container {
+      max-width: 100% !important;     // full width on mobile
+      padding: 0.5rem !important;
+    }
+    .form-container input,
+    .form-container textarea {
+      padding: 0.5rem !important;
+    }
+    .form-container button[type="submit"] {
+      width: 100%;
+      padding: 0.75rem !important;
+    }
+  }
