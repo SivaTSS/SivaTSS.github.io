@@ -1,0 +1,72 @@
+# _data/projects.yml
+- title: "EduVision: AI-Powered Animation and mindmaps"
+  description: "EduVision is an intelligent learning assistant that transforms raw educational text into interactive mindmaps and animated videos to support visual learning. It leverages LLMs (like GPT-4o), Manim animations, Mermaid diagrams, and TTS to make textbook concepts engaging and accessible."
+  technologies:
+    - Python
+    - TensorFlow
+    - Docker
+  link: "https://github.com/SivaTSS/EduVision"
+  image: "/assets/images/eduvision.png"
+
+- title: "3D Scene Reconstruction for Autonomous Robot Navigation"
+  description: "This project aims to develop a comprehensive framework for 3D scene reconstruction, enabling effective autonomous robot navigation in dynamic environments. It integrates advanced object detection, depth mapping, and path planning techniques to enhance robot perception and decision-making capabilities."
+  technologies:
+    - React
+    - Node.js
+    - GraphQL
+  link: "https://github.com/SivaTSS/robot-3d-navigator"
+  image: "/assets/images/robovis.png"
+
+- title: "Flight Graph Agent"
+  description: "This project demonstrates an end-to-end workflow for analyzing flight data as a graph using a combination of ArangoDB, NetworkX, LangChain, and LangGraph. In addition, the notebook integrates an interactive user interface using Gradio, allowing users to input natural language queries and receive both textual answers and visualizations. A CUDA-enabled version of the notebook is also available, which has been successfully run in a collaborative setting and leverages GPU acceleration for enhanced performance."
+  technologies:
+    - Python
+    - TensorFlow
+    - Docker
+  link: "https://github.com/SivaTSS/flight_graph_agent"
+  image: "/assets/images/flight_agent.png"
+
+- title: "Speaker Diarization"
+  description: "The project automates speaker diarization in Zoom calls using computer vision. It identifies speakers, marks them with a green box in real-time, syncs this with audio, and transcribes the conversation. The transcripts are then summarized to provide clear, concise records of virtual meetings."
+  technologies:
+    - React
+    - Node.js
+    - GraphQL
+  link: "https://github.com/SivaTSS/SpeakerDiarization"
+  image: "/assets/images/speaker_diarization.png"
+
+- title: "Unveiling Narratives: Analyzing Character Roles and Themes in Novels"
+  description: "This repository contains the implementation of NLP modules for analyzing novels, focusing on identifying named entities, classifying their roles, and uncovering dominant narratives and themes. The project leverages advanced natural language processing techniques to provide deeper insights into plot progression, character dynamics, and thematic elements in literature."
+  technologies:
+    - Python
+    - TensorFlow
+    - Docker
+  link: "https://github.com/SivaTSS/Unveiling-Narratives"
+  image: "/assets/images/unveiling_narratives.png"
+
+- title: "ViT assisted labeling"
+  description: "This project uses Models like SAM and Grounding DINO to automate the labeling process."
+  technologies:
+    - React
+    - Node.js
+    - GraphQL
+  link: "https://github.com/SivaTSS/ViT_assisted_labeling"
+  image: "/assets/images/vit_annotate.png"
+
+- title: "BioAsk-RAG"
+  description: "This project implements a Retrieval-Augmented Generation (RAG) Question Answering system. It integrates multiple components for direct question answering as well as retrieval-augmented generation by leveraging vector-based retrieval and language models. The system is designed to work with BioASQ dataset, but can be used with any context."
+  technologies:
+    - Python
+    - TensorFlow
+    - Docker
+  link: "https://github.com/SivaTSS/BioAsk-RAG"
+  image: "/assets/images/bioask_rag.png"
+
+- title: "Airviz"
+  description: "The goal of this webapp is to help users understand more about the air we breath."
+  technologies:
+    - React
+    - Node.js
+    - GraphQL
+  link: "https://github.com/SivaTSS/AirViz"
+  image: "/assets/images/airviz.png"
