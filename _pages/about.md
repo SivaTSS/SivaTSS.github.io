@@ -1,6 +1,7 @@
 ---
 title: "About"
 permalink: /about/
+classes: wide
 ---
 
 # About Me
