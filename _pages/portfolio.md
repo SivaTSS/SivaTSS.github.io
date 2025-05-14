@@ -1,143 +1,202 @@
 ---
 permalink: /portfolio/
 title: "Portfolio"
-toc: 
-toc_label: "Table of Contents"
-toc_icon: "bookmark"
+layout: single
+sidebar: false
+classes: wide
 ---
 
 # Portfolio
 
-<p class="intro">A selection of my recent projects. Click on any card to learn more.</p>
+<p class="intro">A curated selection of high-complexity systems and experiments.</p>
 
 <div class="projects-grid">
-
-  {% assign projects = site.data.projects | slice: 0, 8 %}
+  {% assign projects = site.data.projects %}
   {% for project in projects %}
-  <a href="{{ project.link | default: '#' }}" class="project-card"{% if project.link %} target="_blank" rel="noopener"{% endif %}>
-    <div class="card-image-wrapper">
+  <article class="project-card">
+    <a href="{{ project.link | default: '#' }}" class="card-image-link" {% if project.link %}target="_blank" rel="noopener"{% endif %}>
       {% if project.image %}
-      <img src="{{ project.image }}" alt="{{ project.title }} screenshot" class="card-image">
+      <img src="{{ project.image }}" alt="{{ project.title }} — architecture diagram" class="card-image">
       {% else %}
       <div class="card-image placeholder"></div>
       {% endif %}
-    </div>
+    </a>
     <div class="card-content">
-      <h2 class="card-title">{{ project.title }}</h2>
-      <p class="card-description">{{ project.description }}</p>
-      {% if project.technologies %}
-      <p class="card-tech"><strong>Tech:</strong> {{ project.technologies | join: ", " }}</p>
-      {% endif %}
-    </div>
-  </a>
-  {% endfor %}
+      <h2 class="card-title">
+        <a href="{{ project.link | default: '#' }}" {% if project.link %}target="_blank" rel="noopener"{% endif %}>{{ project.title }}</a>
+      </h2>
 
+      <div class="card-details">
+        <p class="card-description">
+          {{ project.description }}
+        </p>
+
+        {% if project.technologies %}
+        <div class="card-tags">
+          {% for tech in project.technologies %}
+          <span class="tag">{{ tech }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if project.github %}
+        <a href="{{ project.github }}" class="view-code" target="_blank" rel="noopener" aria-label="View {{ project.title }} on GitHub">
+          <svg aria-hidden="true" viewBox="0 0 16 16" width="20" height="20"><path fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
+              0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+              0-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+              0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09
+              2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65
+              3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+          </path></svg>
+          View Code
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </article>
+  {% endfor %}
 </div>
 
-<!-- Optional: add pagination if you have more than 8 -->
-{% if site.data.projects.size > 8 %}
-<nav class="portfolio-pagination">
-  <a href="/portfolio/page2/" class="button">Next Projects →</a>
-</nav>
-{% endif %}
-
 <style>
-/* Intro text */
-.intro {
-  margin: 0 0 1rem;
-  color: var(--color-text-secondary);
-  font-size: 1.1rem;
-  text-align: center;
-}
-
-/* Grid */
+/* Force exactly 2 cards per row */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
-/* Card */
+/* Card styling */
 .project-card {
-  background: var(--color-bg-secondary);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-small);
-  text-decoration: none;
-  color: inherit;
   display: flex;
   flex-direction: column;
-  transition: transform .2s, box-shadow .2s;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
-/* Image wrapper for consistent aspect ratio */
-.card-image-wrapper {
+/* Image wrapper */
+.card-image-link {
+  display: block;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 aspect */
+  padding-top: 56.25%;
   position: relative;
-  background: var(--color-bg-tertiary);
+  background: #f0f0f0;
 }
 .card-image {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
   object-fit: cover;
-  transition: transform .3s;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
 }
 .project-card:hover .card-image {
   transform: scale(1.05);
 }
-/* Placeholder if no image */
-.card-image.placeholder {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: var(--color-bg-tertiary);
-}
 
-/* Content */
+/* Content area */
 .card-content {
-  padding: 1rem 1.25rem;
-  flex: 1;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  color: #333;
 }
 .card-title {
-  margin: 0 0 .5rem;
-  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
-.card-description {
-  flex: 1;
-  margin: 0 0 .75rem;
-  color: var(--color-text-secondary);
-  line-height: 1.4;
+.card-title a {
+  color: inherit;
+  text-decoration: none;
 }
-.card-tech {
-  margin: 0;
-  font-size: .9rem;
-  color: var(--color-text-secondary);
+.card-title a:hover {
+  text-decoration: underline;
 }
 
-/* Pagination */
-.portfolio-pagination {
-  text-align: center;
-  margin: 2rem 0;
+/* Clamp description to 4 lines */
+.card-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
 }
-.portfolio-pagination .button {
-  display: inline-block;
-  padding: .6rem 1.2rem;
-  border-radius: var(--border-radius-small);
-  background-color: var(--color-accent);
-  color: #fff;
+
+/* Expanded state */
+.card-description.expanded {
+  -webkit-line-clamp: unset;
+}
+
+/* Tags */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.tag {
+  background: #ececec;
+  border-radius: 999px;
+  padding: 0.25em 0.75em;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+/* View Code link */
+.view-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #0366d6;
   text-decoration: none;
-  transition: background .2s;
+  margin-top: auto;
 }
-.portfolio-pagination .button:hover {
-  background-color: var(--color-accent-hover);
+.view-code svg {
+  fill: currentColor;
+}
+
+/* Read more button */
+.expand-btn {
+  background: none;
+  border: none;
+  color: #007acc;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.95rem;
+  align-self: flex-start;
+  margin-bottom: 1rem;
 }
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".project-card").forEach(function(card) {
+    var desc = card.querySelector(".card-description");
+    if (!desc) return;
+
+    var btn = document.createElement("button");
+    btn.className = "expand-btn";
+    btn.textContent = "Read more";
+
+    btn.addEventListener("click", function() {
+      var expanded = desc.classList.toggle("expanded");
+      btn.textContent = expanded ? "Show less" : "Read more";
+    });
+
+    desc.insertAdjacentElement("afterend", btn);
+  });
+});
+</script>
