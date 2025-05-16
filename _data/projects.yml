@@ -41,7 +41,7 @@
   image: "/assets/images/speaker_diarization.png"
 
 - title: "Unveiling Narratives: Analyzing Character Roles and Themes in Novels"
-  description: "Implements fine-tuned RoBERTa NER (F1 0.91), zero-shot hierarchical role & trait classification, semantic clustering for theme discovery, and a hybrid FAISS–Neo4j retrieval pipeline to analyze narratives across 3,036 Gutenberg novels."
+  description: "Implements fine-tuned RoBERTa NER, zero-shot hierarchical role & trait classification, semantic clustering for theme discovery, and a hybrid FAISS–Neo4j retrieval pipeline to analyze narratives across 3,036 Gutenberg novels."
   technologies:
     - SpaCy
     - TensorFlow
