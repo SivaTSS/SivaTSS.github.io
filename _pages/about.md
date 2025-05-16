@@ -170,9 +170,39 @@ classes: wide
       </div>
     </div>
   </article>
+
+  <article class="card">
+    <h2>Get In Touch</h2>
+    <p>I’d love to hear from you—whether it’s to discuss an opportunity, collaborate on a project, or just say hello!</p>
+    <form action="https://formspree.io/f/mblowjdo" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="New contact from SivaTSS website">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_gotcha" style="display:none;">
+
+      <div class="form-group">
+        <div>
+          <label for="name" class="sr-only">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div>
+          <label for="email" class="sr-only">Your Email</label>
+          <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div style="width: 100%">
+          <label for="message" class="sr-only">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 1rem;">
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
+  </article>
 </div>
-
-
 
 <style>
   .info-grid {
@@ -197,7 +227,6 @@ classes: wide
     text-transform: uppercase;
   }
 
-  /* Ensure the list-based cards have consistent spacing (unchanged) */
   .card ul {
     list-style: none;
     margin: 1rem 0 0;
@@ -208,20 +237,15 @@ classes: wide
     line-height: 1.4;
   }
 
-  /* Skill-group vertical spacing – reduced for compactness */
   .skill-group {
     margin-bottom: 1rem;
   }
-
-  /* Adjust bubble spacing to be more compact */
   .skills-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 0.5rem;
   }
-
-  /* Smaller, tighter skill bubbles */
   .skill {
     background: #ececec;
     border-radius: 999px;
@@ -229,51 +253,40 @@ classes: wide
     font-size: 0.8rem;
     color: #333;
   }
+
+  /* Form styles */
+  .card form {
+    margin-top: 1rem;
+  }
+  .form-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .form-group > div {
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+  }
+  .card form input[type="text"],
+  .card form input[type="email"],
+  .card form textarea {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  .card form button {
+    background: #007ACC;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .card form button:hover {
+    background: #005F99;
+  }
 </style>
-
----
-
-# Get In Touch
-
-I’d love to hear from you—whether it’s to discuss an opportunity, collaborate on a project, or just say hello!
-
-<div class="form-container" style="max-width: 600px; margin: 2rem auto;">
-  <form action="YOUR_STATICMAN_ENDPOINT" method="POST">
-    <p>
-      <label for="name" class="sr-only">Your Name</label><br>
-      <input
-        type="text"
-        id="name"
-        name="fields[name]"
-        placeholder="Your Name"
-        required
-        style="width:100%; padding:1rem; margin-bottom:1rem; box-sizing:border-box;"
-      >
-    </p>
-    <p>
-      <label for="email" class="sr-only">Your Email</label><br>
-      <input
-        type="email"
-        id="email"
-        name="fields[email]"
-        placeholder="Your Email"
-        required
-        style="width:100%; padding:1rem; margin-bottom:1rem; box-sizing:border-box;"
-      >
-    </p>
-    <p>
-      <label for="message" class="sr-only">Message</label><br>
-      <textarea
-        id="message"
-        name="fields[message]"
-        rows="8"
-        placeholder="Your Message"
-        required
-        style="width:100%; padding:1rem; margin-bottom:1rem; box-sizing:border-box;"
-      ></textarea>
-    </p>
-    <p style="text-align:center;">
-      <button type="submit" style="padding:0.75rem 2rem; font-size:1rem;">Send Message</button>
-    </p>
-  </form>
-</div>
