@@ -1,12 +1,10 @@
 ---
-permalink: /portfolio/
-title: "Portfolio"
+permalink: /projects/
+title: "Projects"
 layout: single
 sidebar: false
 classes: wide
 ---
-
-# Projects
 
 <p class="intro">A curated selection of high-complexity systems and experiments.</p>
 
