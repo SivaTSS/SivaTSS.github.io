@@ -6,7 +6,7 @@ sidebar: false
 classes: wide
 ---
 
-<p class="intro">A curated selection of high-complexity systems and experiments.</p>
+<p class="intro">From computer vision to LLMs, these are the AI and ML projects I’ve created—each shaped by a strong research perspective and built to tackle real-world challenges.</p>
 
 <div class="projects-grid">
   {% assign projects = site.data.projects %}
@@ -21,7 +21,6 @@ classes: wide
     </a>
     <div class="card-content">
       <h2 class="card-title">
-        <!-- Title links to the live project -->
         <a href="{{ project.link | default: '#' }}" {% if project.link %}target="_blank" rel="noopener"{% endif %}>
           {{ project.title }}
         </a>
@@ -40,7 +39,6 @@ classes: wide
       </div>
       {% endif %}
 
-      <!-- View Code now also points to the project link -->
       <a href="{{ project.link | default: '#' }}" class="view-code" {% if project.link %}target="_blank" rel="noopener"{% endif %} aria-label="Go to {{ project.title }}">
         <svg aria-hidden="true" viewBox="0 0 16 16" width="20" height="20"><path fill-rule="evenodd"
           d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
@@ -58,6 +56,13 @@ classes: wide
 </div>
 
 <style>
+/* Intro paragraph */
+.intro {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
 /* Force exactly 2 cards per row */
 .projects-grid {
   display: grid;
@@ -104,14 +109,14 @@ classes: wide
 
 /* Content area */
 .card-content {
-  padding: 1.5rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   color: #333;
 }
 .card-title {
-  margin: 0 0 0.75rem;
-  font-size: 1.4rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 .card-title a {
@@ -122,34 +127,35 @@ classes: wide
   text-decoration: underline;
 }
 
-/* Clamp description to 4 lines */
-.card-description {
+/* Clamp description to 2 lines, much smaller font, minimal spacing */
+.card-content .card-description {
+  font-size: 0.85rem !important;    /* noticeably smaller text */
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   overflow: hidden;
-  position: relative;
-  line-height: 1.5;
-  margin: 0 0 0.5rem;
+  line-height: 1.2;
+  margin: 0 0 0;         /* remove all bottom margin */
 }
 
 /* Expanded description */
-.card-description.expanded {
+.card-content .card-description.expanded {
   -webkit-line-clamp: unset;
 }
 
-/* Read more / Show less button */
-.expand-btn {
+/* Read more / Show less button with zero top gap */
+.card-content .expand-btn {
   background: none;
   border: none;
   color: #007acc;
   cursor: pointer;
   padding: 0;
-  font-size: 0.95rem;
+  font-size: 0.75rem;
   align-self: flex-start;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;         /* eliminate any top margin */
+  margin-bottom: 1rem ;
 }
-.expand-btn:hover {
+.card-content .expand-btn:hover {
   text-decoration: underline;
 }
 
@@ -164,17 +170,17 @@ classes: wide
   background: #ececec;
   border-radius: 999px;
   padding: 0.25em 0.75em;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #333;
 }
 
 /* View Code link */
 .view-code {
-  margin-top: auto;            /* push to bottom */
+  margin-top: auto;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #0366d6;
   text-decoration: none;
 }
