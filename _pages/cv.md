@@ -20,7 +20,7 @@ classes: wide
     data="/assets/files/Subramaniya_Siva_T_S_resume.pdf"
     type="application/pdf"
     width="100%"
-    height="600"
+    height="100%"
   >
     <p style="text-align: center;">
       It looks like your browser doesn’t support embedded PDFs.

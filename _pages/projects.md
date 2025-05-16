@@ -6,7 +6,7 @@ sidebar: false
 classes: wide
 ---
 
-<p class="intro">From computer vision to LLMs, these are the AI and ML projects I’ve created—each shaped by a strong research perspective and built to tackle real-world challenges.</p>
+<p class="intro">Explore my machine learning and AI projects below, blending research with practical applications—from vision systems to language models.</p>
 
 <div class="projects-grid">
   {% assign projects = site.data.projects %}

@@ -115,13 +115,10 @@ analytics:
 author:
   name             : "Subramaniya Siva T S"
   avatar           : "/assets/images/profile_pic.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Computer Vision is amazing"
+  bio              : "Building scalable AI systems with computer vision and LLMs."
   location         : "Michigan, USA"
-  email            :
+  email            : "sivasubts@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "tsubrama@msu.edu"
     - label: "LinkedIn"
       icon: "fas fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/subramaniya-siva-t-s/"
@@ -132,9 +129,6 @@ author:
 # Site Footer
 footer:
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "tsubrama@msu.edu"
     - label: "LinkedIn"
       icon: "fas fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/subramaniya-siva-t-s/"
